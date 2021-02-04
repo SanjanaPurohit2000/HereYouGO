@@ -1,7 +1,20 @@
 name: here_you_go_1
 description: A new Flutter application.
 
+<<<<<<< HEAD
 
+=======
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
 version: 1.0.0+1
 
 environment:
@@ -18,6 +31,7 @@ dependencies:
   firebase_core:
   cloud_firestore:
   rflutter_alert: ^1.0.2
+<<<<<<< HEAD
   flutter_currency_converter: ^0.0.3
   firebase_auth:
   google_sign_in:
@@ -28,6 +42,8 @@ dependencies:
   firebase_storage:
   font_awesome_flutter:
 
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
 
 dev_dependencies:
   flutter_test:
@@ -46,8 +62,13 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+<<<<<<< HEAD
   assets:
     - assets/images/
+=======
+  # assets:
+  #  - images/a_dot_burr.jpeg
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

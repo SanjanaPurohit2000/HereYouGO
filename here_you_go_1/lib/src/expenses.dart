@@ -1,12 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 import 'package:flutter_currency_converter/Currency.dart';
 import 'package:here_you_go_1/models/ExpenseModel.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:flutter_currency_converter/flutter_currency_converter.dart';
 import 'package:flutter_currency_converter/flutter_currency_converter.dart';
 
+=======
+import 'package:here_you_go_1/models/ExpenseModel.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'category_widget.dart';
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
 
 class Expense extends StatefulWidget {
   const Expense({Key key}) : super(key: key);
@@ -17,13 +23,17 @@ class Expense extends StatefulWidget {
 
 class _ExpenseState extends State<Expense> {
   String title = "Expense";
+<<<<<<< HEAD
   String test = "";
   static String dropdownValue;
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   final noteController = TextEditingController();
   final amountController = TextEditingController();
   String collection = "expense";
   static double expenseTotal = 0.00;
   static int num = 0;
+<<<<<<< HEAD
     static var currencyTo ;
   static var currencyFrom ;
 
@@ -43,6 +53,8 @@ class _ExpenseState extends State<Expense> {
 
 
   }
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
 
   getExpenses() {
     return Firestore.instance.collection(collection).snapshots();
@@ -54,15 +66,23 @@ class _ExpenseState extends State<Expense> {
     try {
       setState(() {
         expenseTotal += double.parse(amountController.text);
+<<<<<<< HEAD
       });
       Firestore.instance.runTransaction(
             (Transaction transaction) async {
+=======
+        num++;
+      });
+      Firestore.instance.runTransaction(
+        (Transaction transaction) async {
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
           await Firestore.instance
               .collection(collection)
               .document()
               .setData(expense.toJson());
         },
       );
+<<<<<<< HEAD
       // add total to expensetotal table
       Firestore.instance.runTransaction(
             (Transaction transaction) async {
@@ -70,6 +90,8 @@ class _ExpenseState extends State<Expense> {
               .collection('expensetotal').where('uid', isEqualTo: 1);
         },
       );
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
     } catch (e) {
       print(e.toString());
     }
@@ -91,13 +113,18 @@ class _ExpenseState extends State<Expense> {
       expenseTotal -= expenseModel.amount;
     });
     Firestore.instance.runTransaction(
+<<<<<<< HEAD
           (Transaction transaction) async {
+=======
+      (Transaction transaction) async {
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
         await transaction.delete(expenseModel.reference);
       },
     );
   }
 
   initExpenses() async {
+<<<<<<< HEAD
     QuerySnapshot querySnapshot = await Firestore.instance.collection("expense").getDocuments();
     var list = querySnapshot.documents;
     for (int i=0;i<list.length;i++){
@@ -109,6 +136,29 @@ class _ExpenseState extends State<Expense> {
   }
 
 
+=======
+    print("inside initExpense");
+
+    StreamBuilder<QuerySnapshot>(
+        stream: getExpenses(),
+        builder: (context, snapshot) {
+          print("After getExpoense");
+          print(snapshot);
+          if (snapshot.hasData) {
+            num = snapshot.data.documents.length;
+            var list = snapshot.data.documents;
+            for (int i = 0; i < snapshot.data.documents.length; i++) {
+              expenseTotal += list[i]['amount'];
+              print(list[i]['note']);
+            }
+          } else {
+            expenseTotal = 0.0;
+          }
+          return;
+        });
+  }
+
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   Widget buildBody(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
       stream: getExpenses(),
@@ -117,7 +167,11 @@ class _ExpenseState extends State<Expense> {
           return Text('Error ${snapshot.error}');
         }
         if (snapshot.hasData) {
+<<<<<<< HEAD
           //print("Documents ${snapshot.data.documents.length}");
+=======
+          print("Documents ${snapshot.data.documents.length}");
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
           return buildList(context, snapshot.data.documents);
         }
         return CircularProgressIndicator();
@@ -199,16 +253,28 @@ class _ExpenseState extends State<Expense> {
   void initState() {
     super.initState();
     print("init");
+<<<<<<< HEAD
     initExpenses();
     currencyCheck();
   }
 
+=======
+    // initExpenses();
+    print("init");
+  }
+
+  @override
+  void didUpdateWidget(Expense oldWidget) {
+    initExpenses();
+  }
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
 
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         child: Column(
           children: [
+<<<<<<< HEAD
           SizedBox(
           height: 100,
           child: Column(
@@ -338,4 +404,116 @@ class _ExpenseState extends State<Expense> {
     ),
     );
     }
+=======
+            SizedBox(
+              height: 100,
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      StreamBuilder<QuerySnapshot>(
+                          stream: getExpenses(),
+                          builder: (context, snapshot) {
+                            if (snapshot.hasData) {
+                              num = snapshot.data.documents.length;
+                              var list = snapshot.data.documents;
+                              for (int i = 0;
+                                  i < snapshot.data.documents.length;
+                                  i++) {
+                                expenseTotal += list[i]['amount'];
+                              }
+                            }
+                            return RichText(
+                              text: TextSpan(
+                                text: expenseTotal.toString(),
+                                style: TextStyle(
+                                    fontSize: 30.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                            );
+                          }),
+                      Text(
+                        "Total",
+                        style: TextStyle(fontSize: 22.0),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          text: num.toString(),
+                          style: TextStyle(
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                      ),
+                      Text(
+                        "Total Expenses",
+                        style: TextStyle(fontSize: 20.0),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Flexible(
+              child: buildBody(context),
+            ),
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        title: Text(title),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Alert(
+              context: context,
+              title: "Add",
+              content: Column(
+                children: <Widget>[
+                  TextField(
+                    controller: noteController,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.book),
+                      labelText: 'Note',
+                    ),
+                  ),
+                  TextField(
+                    controller: amountController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.money),
+                      labelText: 'Amount',
+                    ),
+                  ),
+                ],
+              ),
+              buttons: [
+                DialogButton(
+                  onPressed: () {
+                    addExpenses();
+                    noteController.clear();
+                    amountController.clear();
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    "Add",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                )
+              ]).show();
+        },
+        label: Text('Add'),
+        icon: Icon(Icons.add),
+        backgroundColor: Colors.blue,
+      ),
+    );
+  }
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
 }

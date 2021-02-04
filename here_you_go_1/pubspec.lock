@@ -64,6 +64,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0-nullsafety.1"
+<<<<<<< HEAD
   firebase:
     dependency: transitive
     description:
@@ -92,6 +93,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.3+1"
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   firebase_core:
     dependency: "direct main"
     description:
@@ -99,6 +102,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.0+9"
+<<<<<<< HEAD
   firebase_storage:
     dependency: "direct main"
     description:
@@ -106,11 +110,14 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.6"
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   flutter:
     dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_currency_converter:
     dependency: "direct main"
     description:
@@ -125,11 +132,14 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.11"
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -198,6 +208,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.2"
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   matcher:
     dependency: transitive
     description:
@@ -213,12 +225,17 @@ packages:
     source: hosted
     version: "1.3.0-nullsafety.3"
   path:
+<<<<<<< HEAD
     dependency: "direct main"
+=======
+    dependency: transitive
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
     description:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
+<<<<<<< HEAD
   pedantic:
     dependency: transitive
     description:
@@ -247,6 +264,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.5"
+=======
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
   rflutter_alert:
     dependency: "direct main"
     description:
@@ -317,4 +336,8 @@ packages:
     version: "2.1.0-nullsafety.3"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
+<<<<<<< HEAD
   flutter: ">=1.12.13+hotfix.4 <2.0.0"
+=======
+  flutter: ">=1.5.0 <2.0.0"
+>>>>>>> 656d9dc8f3b98eb9f5501db017f7af6a10dac0c9
