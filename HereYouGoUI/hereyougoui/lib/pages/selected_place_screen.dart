@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hereyougoui/models/trips.dart';
-import 'package:hereyougoui/pages/read_blog.dart';
+import 'package:here_you_go_1/models/trips.dart';
+import 'package:here_you_go_1/screens/read_blog.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SelectedPlaceScreen extends StatelessWidget {
@@ -29,7 +29,7 @@ class SelectedPlaceScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage('assets/images/c.jpg'),
+                      image: AssetImage('assets/images/b.jpg'),
                     ),
                   ),
                 ),
@@ -100,7 +100,7 @@ class SelectedPlaceScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 19.2),
                       child: Text(
-                        "Trip Name",
+                        "Bali Travel Guide",
                         maxLines: 2,
                         style: GoogleFonts.playfairDisplay(
                             fontSize: 42.6, fontWeight: FontWeight.w700,
@@ -110,7 +110,7 @@ class SelectedPlaceScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 19.2),
                       child: Text(
-                        "Trip Description (3-4 lines will be here)",
+                        "Bali is a favorite destination for many people around the world and it’s easy to see why!",
                         maxLines: 3,
                         style: GoogleFonts.lato(
                             fontSize: 19.2,
@@ -118,9 +118,9 @@ class SelectedPlaceScreen extends StatelessWidget {
                             color: Colors.white),
                       ),
                     ),
-                    SizedBox(
+                   /* SizedBox(
                       height: 48,
-                    ),
+                    ),*/
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -129,14 +129,14 @@ class SelectedPlaceScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              'Description',
+                              'Indonesia',
                               style: GoogleFonts.lato(
                                   fontSize: 16.8,
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white),
                             ),
                             Text(
-                              'User Name',
+                              'Joe',
                               style: GoogleFonts.lato(
                                   fontSize: 21.6,
                                   fontWeight: FontWeight.w700,
